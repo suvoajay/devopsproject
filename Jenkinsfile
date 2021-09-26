@@ -9,7 +9,7 @@ pipeline {
                 sh "wget -N -O 'puppet7-release-el-8.noarch.rpm' https://yum.puppetlabs.com/puppet7-release-el-8.noarch.rpm"
                 sh "chmod 755 puppet7-release-el-8.noarch.rpm"
                 sh "sudo rpm -ivh puppet7-release-el-8.noarch.rpm"
-                sh "sudo yum install -y puppet-agent"
+            
             }
         }
 
