@@ -1,5 +1,5 @@
 include docker
-class { 'docker':
+class {
   manage_package              => true,
   use_upstream_package_source => false,
   package_engine_name         => 'docker-engine',
