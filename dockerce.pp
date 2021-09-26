@@ -1,6 +1,6 @@
 
-        exec {'apt-update':
-                command => '/usr/bin/apt-get update'
+        exec {'yum-update':
+                command => '/usr/bin/yum update'
         }
  
         package{'docker.io':
