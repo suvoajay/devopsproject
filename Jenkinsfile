@@ -30,7 +30,7 @@ pipeline {
 		stage('Git Checkout') {
             agent{ label 'slave'}
             steps {
-          
+                sh "if [ ! -d '/home/admin/jenkins_slave/workspace/Certification' ]; then git clone https://github.com/suvoajay/devopsproject.git /home/admin/jenkins_slave/workspace/Certification ; fi"
                 sh "cd /home/admin/jenkins_slave/workspace/Certification && sudo git checkout master"
             }
         }      
