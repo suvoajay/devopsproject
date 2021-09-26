@@ -26,13 +26,7 @@ pipeline {
                 sh "sudo systemctl enable puppet"
             }
         }
-		stage('Install Docker on slave through puppet') {
-            agent{ label 'slave'}
-            steps {
-                sh "sudo /opt/puppetlabs/bin/puppet module install garethr-docker"
-                sh "sudo /opt/puppetlabs/bin/puppet apply /home/jenkins/jenkins_slave/workspace/Certification/dockerce.pp"
-            }
-        }
+		
 		stage('Git Checkout') {
             agent{ label 'slave'}
             steps {
@@ -40,7 +34,13 @@ pipeline {
                 sh "cd /home/admin/jenkins_slave/workspace/Certification && sudo git checkout master"
             }
         }      
-        
+        stage('Install Docker on slave through puppet') {
+            agent{ label 'slave'}
+            steps {
+                sh "sudo /opt/puppetlabs/bin/puppet module install garethr-docker"
+                sh "sudo /opt/puppetlabs/bin/puppet apply /home/jenkins/jenkins_slave/workspace/Certification/dockerce.pp"
+            }
+        }
         stage('Docker Build and Run') {
             agent{ label 'slave'}
             steps {
