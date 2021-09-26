@@ -38,7 +38,7 @@ pipeline {
             agent{ label 'slave'}
             steps {
                 sh "sudo /opt/puppetlabs/bin/puppet module install garethr-docker"
-                sh "sudo /opt/puppetlabs/bin/puppet apply /home/jenkins/jenkins_slave/workspace/Certification/dockerce.pp"
+                sh "sudo /opt/puppetlabs/bin/puppet apply /home/admin/jenkins_slave/workspace/Certification/dockerce.pp"
             }
         }
         stage('Docker Build and Run') {
