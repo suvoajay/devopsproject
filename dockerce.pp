@@ -1,5 +1,5 @@
-include 'docker'
-
-docker::image { 'centos':
-   image_tag => 'nightly',
+include docker
+class { 'docker':
+  use_upstream_package_source => false,
+  repo_opt => '',
 }
