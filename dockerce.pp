@@ -1,4 +1,3 @@
-include docker
 class {'docker':
   manage_package              => true,
   use_upstream_package_source => false,
