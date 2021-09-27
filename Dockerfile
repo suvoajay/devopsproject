@@ -1,8 +1,5 @@
-FROM devopsedu/webapp:latest
+FROM php:apache
 
-COPY website/* /var/www/html/
-
-RUN apt update && \
-    apt install -y php
+COPY website /var/www/html/
 
 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
