@@ -1,6 +1,6 @@
 FROM devopsedu/webapp:latest
 
-COPY website/ /var/www/html/
+COPY website/* /var/www/html/
 
 RUN apt update && \
     apt install -y php
