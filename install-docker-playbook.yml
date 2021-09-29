@@ -46,14 +46,3 @@ apt:
 name: "docker-ce"
 state: present
 force_apt_get: "yes"
-
-- name: Create docker group
-group:
-name: "docker"
-state: present
-
-- name: Adding user dadmin to docker group
-user:
-name: "dadmin"
-groups: "docker"
-append: "yes"
