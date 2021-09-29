@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: remote
   become: yes
   tasks:
   
